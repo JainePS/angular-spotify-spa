@@ -1,4 +1,5 @@
   import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from 'src/app/services/spotify.service';
   
 
   @Component({
@@ -8,7 +9,7 @@
   })
   export class HomeComponent implements OnInit {
     
-    constructor() {}
+    constructor(private spotifyservice: SpotifyService) { }
     
     ngOnInit(): void {
     }
