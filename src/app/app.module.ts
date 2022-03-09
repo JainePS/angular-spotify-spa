@@ -25,7 +25,6 @@ import { ROUTES } from './app.routes';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     RouterModule.forRoot( ROUTES, {useHash: true} )
   ],
   providers: [],
