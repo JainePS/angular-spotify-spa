@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 //Este decorador por ter um provideIn, é identificado automaticamente pelo Angular.
 //Ou seja, não é necessário inserir em Módulos.
 @Injectable({
@@ -7,25 +7,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SpotifyService {
 
+  SPOTIFY_URL = 'https://api.spotify.com';
+
   constructor(private http: HttpClient) { 
-    console.log('Spotify service ready!');
-    
+    console.log('Spotify service ready!'); 
   }
 
-  getNewRealeses(){
+  getNewRealeses() {
 
-    const headers = new HttpHeaders({
-
-      'Authorization': 'Bearer BQA1ocIS-PsxbVVqUPtYHapXf_fXY8GzS9v9vERF2Z8UJx_yiuveGRcG2-fmsipMeijXr-8V9mmKfWfvPEc'
-
+   const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQDLXeDsKleJK9kB8iUhcxYk8zphu9d2Kg-vPlDjG7c2MVKpWW_a14LnHlQCIRd3g8Swo0UslOPmbVqI7OI'
+      
     });
-
-    this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', {headers})
-        .subscribe(data => {
-          console.log(data);
-          
-        })
+    
+    return this.http.get(`${this.SPOTIFY_URL}/v1/browse/new-releases?limit=20`, {headers})
   }
-
-
 }
