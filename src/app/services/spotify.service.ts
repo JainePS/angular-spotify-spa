@@ -16,7 +16,7 @@ export class SpotifyService {
     console.log('Spotify service ready!'); 
     
     this.headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDv7xwVpn-V6tgIktqRSiFOBzThY89qCNUZ-h3HX5dGl5FAhBHykDbhKUlGKLyv2XYK4qB01UmzlbShwVY'
+      'Authorization': 'Bearer BQC2-0l6mS41LmaQZIzbMZRTR5R7K-o_TXWRPQ8BHyh--HvAnFspxLlNFFJ6lFpt243cS3fIVNhdAlp_p7g'
     });
   }
   

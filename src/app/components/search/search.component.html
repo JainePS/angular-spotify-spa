@@ -8,7 +8,7 @@
     <div class="container ">
       <div class="row row-cols-5 m-5">
         <div *ngFor="let ARTIST of ARTISTS"  class="card m-1" style="width: 25rem;">
-          <img src={{ARTIST.images[0].url}} class="card-img-top" alt="...">
+          <img [src]="ARTIST.images | noimage" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ARTIST.name}}</h5>
              
