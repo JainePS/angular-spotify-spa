@@ -15,7 +15,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 
     this.spotify.getNewRealeses()
       .subscribe( (newReleases: any) => {
-        this.albums = newReleases.albums.items;
+        this.albums = newReleases;
         console.log(this.albums);
     
         }); 
