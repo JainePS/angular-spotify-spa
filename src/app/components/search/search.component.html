@@ -1,20 +1,7 @@
-<div class="row">
+<div class="row m-5">
     <div class="col">   
         <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Search artist...">
     </div>
 </div>
 
-<div class="card-columns">
-    <div class="container ">
-      <div class="row row-cols-5 m-5">
-        <div *ngFor="let ARTIST of ARTISTS"  class="card m-1" style="width: 25rem;">
-          <img [src]="ARTIST.images | noimage" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{ARTIST.name}}</h5>
-             
-          </div>
-          
-        </div>
-      </div> 
-    </div>
-  </div>
+<app-cards [items] = "ARTISTS"></app-cards>

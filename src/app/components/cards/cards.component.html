@@ -1,0 +1,17 @@
+<div class="card-columns">
+    <div class="container ">
+      <div class="row row-cols-5">
+        <div *ngFor="let album of items"  class="card m-1" style="width: 25rem;">
+          <img [src]="album.images | noimage" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{album.name}}</h5>      
+            <hr>
+            <button *ngFor="let artist of album.artists; let i=index" style="border-radius: 25px;" class="btn btn-primary m-1">{{artist.name}}</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{items.release_date}}</small>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
