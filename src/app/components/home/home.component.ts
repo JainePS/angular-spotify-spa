@@ -9,16 +9,18 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   })
   export class HomeComponent {
     albums: any [] = [];
-    
-    constructor(private spotify: SpotifyService) { 
+    loading: boolean;
 
-    this.spotify.getNewRealeses()
+    constructor(private spotify: SpotifyService) { 
+      this.loading = true;
+
+     this.spotify.getNewRealeses()
       .subscribe( (newReleases: any) => {
         this.albums = newReleases;
-        console.log(this.albums);
-    
-        }); 
-   }
+        this.loading = false;  
+      }); 
+        
+    }
       
     parseArtistName( artistsArray: any[] ) {
       let artistas:string [] = [];
